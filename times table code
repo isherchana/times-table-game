@@ -1,0 +1,173 @@
+"""play = input("Greetings. Do you want to play?: ")
+type = None
+questions = ["What is 2+2?: ", "What is 3+3?: ", "What is 2+3?: "]
+answers = [4, 6, 5]
+score = 0
+
+if play == "yes":
+    print("Loading...")
+    type = True
+
+else:
+    print("Goodbye!")
+    type = False
+
+while type == True:
+    q1 = int(input(questions[0]))
+    if q1 == answers[0]:
+        print("correct!")
+        score += 1
+
+    else:
+        print("Wrong!")
+
+    q2 = int(input(questions[1]))
+    if q2 == answers[1]:
+        print("Correct!")
+        score+=1
+    else:
+        print("Wrong!")
+
+    q3 = int(input(questions[2]))
+    if q3 == answers[2]:
+        print("Correct!")
+        score+=1
+
+    else:
+        print("Wrong!")
+
+
+    if score == 3:
+        print("You got 3/3")
+        break
+
+
+"""
+"""import random
+play = input("Do you want to play?: ")
+
+score = 0
+
+
+
+while score != 10:
+    number = int(input("What times table do you want to learn?"))
+    multiply = random.randint(1,12)
+    questions = int(input(f"What is {number} * {multiply}?"))
+    if questions == number * multiply:
+        print("Correct!")
+        score +=1
+
+    else:
+        print("Wrong")
+
+print(score)
+"""
+#times table game
+import random
+score = 0
+custom_score = [12,24,36,48,60]
+playing = None
+play = input("Do you want to play?: ")
+
+if play == "yes":
+    playing = True
+    print("Loading...")
+
+else:
+    print("Goodbye")
+    exit()
+
+while playing == True:
+    options = int(input("""
+Enter an option you would like to play: 
+1. A certain times table
+2. 10 random questions
+3. 50 random questions
+4. exit
+>"""))
+
+    if options == 1:
+        tt = int(input("What times table would you like to learn?: "))
+        while True:
+
+            multiply = random.randint(1,12)
+            question = int(input(f"What is {tt} *{multiply}?: "))
+            answer = tt * multiply
+
+            if question == answer:
+                print("correct")
+                score += 1
+            if score == custom_score[0]:
+                play_on = input("Do you want to play on?: ")
+                if play_on != "yes".lower():
+                    break
+
+            elif score == custom_score[1]:
+                play_on = input("Do you want play on?: ")
+                if play_on != "yes".lower():
+                    break
+            elif score == custom_score[2]:
+                play_on = input("Do you want play on?: ")
+                if play_on != "yes".lower():
+                    break
+            elif score == custom_score[3]:
+                play_on = input("Do you want play on?: ")
+                if play_on != "yes".lower():
+                    break
+            elif score == custom_score[4]:
+                print(f"You passed the {tt} times table!")
+                print("Returning you to menu...")
+                break
+            elif question != answer:
+                print("Wrong")
+
+
+    elif options == 2:
+        print("Loading 10 random questions...")
+        score = 0
+        for x in range(1,11):
+            multiply = random.randint(1, 12)
+            multiplied = random.randint(1, 12)
+            question = int(input(f"What is {multiply} * {multiplied}: "))
+            answer = multiply*multiplied
+
+            if answer == question:
+                print("Correct! ")
+                score+=1
+
+            else:
+                print("Wrong")
+        print(f"Your score was {score} out of 10")
+
+    elif options == 3:
+        print("Loading 50 random questions...")
+        score = 0
+        for x in range(1, 51):
+            multiply = random.randint(1, 12)
+            multiplied = random.randint(1, 12)
+            question = int(input(f"What is {multiply} * {multiplied}: "))
+            answer = multiply * multiplied
+
+            if answer == question:
+                print("Correct! ")
+                score += 1
+
+            else:
+                print("Wrong")
+        print(f"Your score was {score} out of 50")
+
+    elif options == 4:
+        print("Goodbye...")
+        quit()
+
+
+
+
+
+
+
+
+
+
+
